@@ -20,11 +20,12 @@ load_rc_config $name
 : ${scrutiny_binary:="/opt/scrutiny/bin/scrutiny-web-linux-amd64"}
 
 pidfile="/var/run/scrutiny.pid"
+log_file="/var/log/scrutiny.log"
 
 scrutiny_start() {
     if [ -f $scrutiny_binary ]; then
         echo "Starting Scrutiny..."
-        daemon -p $pidfile $scrutiny_binary start --config $scrutiny_config
+        daemon -p $pidfile $scrutiny_binary start --config $scrutiny_config >> ${log_file} 2>&1
     else
         echo "Scrutiny binary not found!"
         return 1
