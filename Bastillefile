@@ -1,6 +1,6 @@
-ARG SCRUTINY_CONFIG=/opt/scrutiny/config/
-ARG SCRUTINY_BINARY=/opt/scrutiny/bin/
-ARG SCRUTINY_WEB=/opt/scrutiny/web/
+ARG SCRUTINY_CONFIG=/opt/scrutiny/config
+ARG SCRUTINY_BINARY=/opt/scrutiny/bin
+ARG SCRUTINY_WEB=/opt/scrutiny/web
 ARG SCRUTINY_VERSION=0.3.13
 
 CMD mkdir -p ${SCRUTINY_CONFIG} && echo "making config Directory at ${SCRUTINY_CONFIG} and creating Default Config file"
