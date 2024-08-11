@@ -32,12 +32,14 @@ Installation overview using XigmanasNAS Bastille Extension Gui
 ## Applying the Scrutiny template to the newly created jail
 
 1. make a scripts or binary dataset if not already done for other scripts (highly recomemded)
-2. download this file `https://github.com/AnalogJ/scrutiny/releases/download/0.3.13/scrutiny-collector-metrics-freebsd-amd64`
-3. Keep the file persistent storage. ex: `/mnt/pool/script/scrutny/scrutiny-collector-metrics-freebsd-amd64`
-4. make sure the Scrutiny collector is executable. `chmod +x /mnt/pool/script/scrutny/scrutiny-collector-metrics-freebsd-amd64`
-5. this command will manually trigger the collector, to populate the Scrutiny dashboard. 8080 is default port.
-   	`/mnt/pool/services/scrutiny/scrutiny-collector-metrics-freebsd-amd64 run --api-endpoint "http://10.10.10.7:8080"`
-6. create a cron job to do it automatically
+2. download this file
+   `https://github.com/AnalogJ/scrutiny/releases/download/0.3.13/scrutiny-collector-metrics-freebsd-amd64`
+4. Keep the file persistent storage.
+   ex: `/mnt/pool/script/scrutny/scrutiny-collector-metrics-freebsd-amd64`
+6. make sure the Scrutiny collector is executable. `chmod +x /mnt/pool/script/scrutny/scrutiny-collector-metrics-freebsd-amd64`
+7. this command will manually trigger the collector, to populate the Scrutiny dashboard. 8080 is default port.
+   `/mnt/pool/services/scrutiny/scrutiny-collector-metrics-freebsd-amd64 run --api-endpoint "http://10.10.10.7:8080"`
+8. create a cron job to do it automatically
 
 ## Thanks to Scrutiny Developers
 https://github.com/AnalogJ/scrutiny
