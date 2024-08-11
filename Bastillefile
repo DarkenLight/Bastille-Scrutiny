@@ -7,7 +7,8 @@ CMD mkdir -p ${SCRUTINY_CONFIG} && echo "making config Directory at ${SCRUTINY_C
 CP scrutiny.yaml ${SCRUTINY_CONFIG}
 
 CMD mkdir -p ${SCRUTINY_BINARY} && echo "making binary Directory at ${SCRUTINY_BINARY}"
-CMD cd ${SCRUTINY_BIN} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-freebsd-amd64 && chmod +x scrutiny-web-freebsd-amd64
+CMD cd ${SCRUTINY_BIN} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-freebsd-amd64
+CMD cd ${SCRUTINY_BIN} && chmod +x scrutiny-web-freebsd-amd64
 
 CMD mkdir -p ${SCRUTINY_WEB} && echo "making web Directory at ${SCRUTINY_WEB}"
 CMD cd ${SCRUTINY_WEB} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-frontend.tar.gz
