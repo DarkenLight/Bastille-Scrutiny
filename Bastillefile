@@ -1,0 +1,23 @@
+ARG SCRUTINY_CONFIG=/opt/scrutiny/config/
+ARG SCRUTINY_BINARY=/opt/scrutiny/bin/
+ARG SCRUTINY_WEB=/opt/scrutiny/web/
+ARG SCRUTINY_VERSION=0.3.13
+
+CMD mkdir -p ${SCRUTINY_CONFIG} && echo "making config Directory at ${SCRUTINY_CONFIG} and creating Default Config file"
+CP scrutiny.yaml ${SCRUTINY_CONFIG}
+
+CMD mkdir -p ${SCRUTINY_BINARY} && echo "making binary Directory at ${SCRUTINY_BINARY}"
+CMD cd ${SCRUTINY_BIN} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-freebsd-amd64 && chmod +x scrutiny-web-freebsd-amd64
+
+CMD mkdir -p ${SCRUTINY_WEB} && echo "making web Directory at ${SCRUTINY_WEB}"
+CMD cd ${SCRUTINY_WEB} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-frontend.tar.gz
+CMD cd ${SCRUTINY_WEB} && tar xvzf scrutiny-web-frontend.tar.gz --strip-components 1 -C . && rm -rf scrutiny-web-frontend.tar.gz
+
+CMD mkdir -p /usr/local/etc/rc.d
+CP scrutiny /usr/local/etc/rc.d/
+CMD chmod +x /usr/local/etc/rc.d/scrutiny
+
+SYSRC scrutiny_enable="YES"
+SYSRC scrutiny_config=${SCRUTINY_CONFIG}/scrutiny.yaml
+SYSRC scrutiny_binary=${SCRUTINY_BINARY}/scrutiny-web-freebsd-amd64
+SERVICE scrutiny start
