@@ -1,0 +1,53 @@
+#!/bin/sh
+#
+# PROVIDE: scrutiny
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="scrutiny"
+rcvar="scrutiny_enable"
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+status_cmd="${name}_status"
+
+load_rc_config $name
+
+: ${scrutiny_enable:=NO}
+: ${scrutiny_config:="/opt/scrutiny/config/scrutiny.yaml"}
+: ${scrutiny_binary:="/opt/scrutiny/bin/scrutiny-web-linux-amd64"}
+
+pidfile="/var/run/scrutiny.pid"
+
+scrutiny_start() {
+    if [ -f $scrutiny_binary ]; then
+        echo "Starting Scrutiny..."
+        daemon -p $pidfile $scrutiny_binary start --config $scrutiny_config
+    else
+        echo "Scrutiny binary not found!"
+        return 1
+    fi
+}
+
+scrutiny_stop() {
+    if [ -f $pidfile ]; then
+        echo "Stopping Scrutiny..."
+        kill $(cat $pidfile)
+        rm $pidfile
+    else
+        echo "Scrutiny is not running!"
+    fi
+}
+
+scrutiny_status() {
+    if [ -f $pidfile ]; then
+        echo "Scrutiny is running with PID: $(cat $pidfile)"
+    else
+        echo "Scrutiny is not running!"
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
