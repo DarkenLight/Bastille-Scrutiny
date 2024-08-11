@@ -1,4 +1,4 @@
-# Bastille-Scrutiny
+# Bastille-scrutiny
 FreeBAD Jail Template for Scrutiny, it is a Hard Drive Health Dashboard &amp; Monitoring solution, merging manufacturer provided S.M.A.R.T metrics with real-world failure rates.
 
 Install Vaultwarden in a FreeBSD Jail environment
@@ -34,7 +34,7 @@ Installation overview using XigmanasNAS Bastille Extension Gui
 1. SSH to your Xigmanas Server
 
 2. BOOTSTRAP the template
-`bastille bootstrap https://github.com/DarkenLight/Bastille-Scrutiny`
+`bastille bootstrap https://github.com/DarkenLight/Bastille-scrutiny`
 
 3. Apply the Template to the TARGATE jail.
 `bastille template scrutiny DarkenLight/Bastille-Scrutiny`
