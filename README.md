@@ -21,7 +21,7 @@ Installation overview using XigmanasNAS Bastille Extension Gui
 9. Restart the jail.
 
 
-## Applying the Vaultwarden template to the newly created jail
+## Applying the Scrutiny template to the newly created jail
 
 1. SSH to your Xigmanas Server
 2. BOOTSTRAP the template
@@ -29,7 +29,7 @@ Installation overview using XigmanasNAS Bastille Extension Gui
 3. Apply the Template to the TARGATE jail.
 `bastille template scrutiny DarkenLight/Bastille-scrutiny`
 
-## Applying the Vaultwarden template to the newly created jail
+## Applying the Scrutiny template to the newly created jail
 
 1. make a scripts or binary dataset if not already done for other scripts (highly recomemded)
 2. download this file `https://github.com/AnalogJ/scrutiny/releases/download/0.3.13/scrutiny-collector-metrics-freebsd-amd64`
