@@ -5,6 +5,7 @@ ARG SCRUTINY_VERSION=0.3.13
 
 CMD mkdir -p ${SCRUTINY_CONFIG} && echo "making config Directory at ${SCRUTINY_CONFIG} and creating Default Config file"
 CP scrutiny.yaml ${SCRUTINY_CONFIG}
+RENDER ${SCRUTINY_CONFIG}
 
 CMD mkdir -p ${SCRUTINY_BINARY} && echo "making binary Directory at ${SCRUTINY_BINARY}"
 CMD cd ${SCRUTINY_BINARY} && fetch https://github.com/AnalogJ/scrutiny/releases/download/${SCRUTINY_VERSION}/scrutiny-web-freebsd-amd64
