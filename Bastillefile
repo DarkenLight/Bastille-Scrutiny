@@ -17,6 +17,7 @@ CMD cd ${SCRUTINY_WEB} && tar xvzf scrutiny-web-frontend.tar.gz --strip-componen
 
 CMD mkdir -p /usr/local/etc/rc.d
 CP scrutiny /usr/local/etc/rc.d/
+RENDER /usr/local/etc/rc.d/
 CMD chmod +x /usr/local/etc/rc.d/scrutiny
 
 SYSRC scrutiny_enable="YES"
