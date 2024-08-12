@@ -24,3 +24,4 @@ SYSRC scrutiny_enable="YES"
 SYSRC scrutiny_config=${SCRUTINY_CONFIG}/scrutiny.yaml
 SYSRC scrutiny_binary=${SCRUTINY_BINARY}/scrutiny-web-freebsd-amd64
 SERVICE scrutiny start
+CMD echo "Scrutiny has been installed. Service availale at http://<JAIL-IP>:8080."
