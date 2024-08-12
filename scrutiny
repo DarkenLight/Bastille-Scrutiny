@@ -16,8 +16,8 @@ status_cmd="${name}_status"
 load_rc_config $name
 
 : ${scrutiny_enable:=NO}
-: ${scrutiny_config:="/opt/scrutiny/config/scrutiny.yaml"}
-: ${scrutiny_binary:="/opt/scrutiny/bin/scrutiny-web-linux-amd64"}
+: ${scrutiny_config:="${SCRUTINY_CONFIG}/scrutiny.yaml"}
+: ${scrutiny_binary:="${SCRUTINY_BINARY}/scrutiny-web-freebsd-amd64"}
 
 pidfile="/var/run/scrutiny.pid"
 log_file="/var/log/scrutiny.log"
