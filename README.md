@@ -34,6 +34,7 @@ Installation overview using XigmanasNAS Bastille Extension Gui
 1. make a scripts or binary dataset if not already done for other scripts (highly recomemded)
 2. download the scrutiny-collector binary file. both version works, one from the same release another from current release (recomemded). 
    `https://github.com/AnalogJ/scrutiny/releases/download/0.3.13/scrutiny-collector-metrics-freebsd-amd64`
+   
    `https://github.com/AnalogJ/scrutiny/releases/download/0.8.1/scrutiny-collector-metrics-freebsd-amd64`
 4. Keep the file persistent storage.
    ex: `/mnt/pool/script/scrutny/scrutiny-collector-metrics-freebsd-amd64`
